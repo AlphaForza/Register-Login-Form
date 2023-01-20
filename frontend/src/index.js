@@ -10,6 +10,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Product from './pages/Product';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
 	{
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
 			{
 				path: '/product',
 				element: <Product />,
+			},
+			{
+				path: '/profile',
+				element: <Profile />,
 			},
 		],
 	},

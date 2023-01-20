@@ -23,7 +23,7 @@ function Login() {
 					'http://localhost:8800/login',
 					user
 				);
-				navigate('/product');
+				navigate('/profile');
 				window.location.reload();
 
 				localStorage.setItem('logged', JSON.stringify(data.data[0]));
