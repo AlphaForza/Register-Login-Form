@@ -1,6 +1,15 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect } from 'react';
 
 function Home() {
+	useEffect(() => {
+		const fetchAllBooks = async () => {
+			let data = await axios
+				.post('http://localhost:8800/login')
+				.then((response) => console.log(response));
+		};
+		fetchAllBooks();
+	}, []);
 	return (
 		<div className='bg-[#2d7dbd] w-full h-full'>
 			<div className='container mx-auto flex h-[89vh] items-center justify-center'>

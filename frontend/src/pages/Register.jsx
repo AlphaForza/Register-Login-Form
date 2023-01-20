@@ -34,7 +34,11 @@ function Register() {
 	console.log();
 	return (
 		<div className='bg-[#2d7dbd] w-full h-full'>
-			<div className='container mx-auto flex h-[89vh] items-center justify-center'>
+			<div className='container mx-auto flex gap-10 flex-col h-[89vh] items-center justify-center'>
+				<h1 className='text-4xl text-center text-white font-bold uppercase'>
+					Register{' '}
+					<span className='text-blue-300'>ALPHACODE DEV. 👋</span>
+				</h1>
 				<form className='flex flex-col items-center justify-center gap-5'>
 					<input
 						className='bg-transparent border border-blue-300 rounded-full px-10 py-3 text-blue-100 placeholder:text-white text-lg'
