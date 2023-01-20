@@ -1,7 +1,11 @@
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
+
 function App() {
 	return (
-		<div className='container mx-auto'>
-			<h1 className=''>Radii</h1>
+		<div>
+			<Navbar />
+			<Outlet />
 		</div>
 	);
 }
