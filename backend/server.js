@@ -2,12 +2,12 @@ const express = require('express');
 const mysql = require('mysql');
 const cors = require('cors');
 
-const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 
 const app = express();
 app.use(express.json());
+
 app.use(
 	cors({
 		origin: ['http://localhost:3000'],
@@ -15,9 +15,10 @@ app.use(
 		credentials: true,
 	})
 );
+
 app.use(cors());
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
 app.use(
 	session({
@@ -58,12 +59,11 @@ app.post('/login', (req, res) => {
 	const password = req.body.password;
 
 	const q = 'SELECT * FROM users WHERE name = ?';
-	db.query(q, name, (err, result) => {
+	db.query(q, [name], (err, result) => {
 		if (err) {
 			res.send({ err: err });
 		}
-
-		return res.json(result);
+		res.send(result);
 	});
 });
 

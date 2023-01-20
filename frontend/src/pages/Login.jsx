@@ -19,8 +19,14 @@ function Login() {
 		// here is little validation if length bigger than zero...
 		if (user.name.length > 0 && user.password.length > 0) {
 			try {
-				await axios.post('http://localhost:8800/login', user);
-				navigate('/');
+				let data = await axios.post(
+					'http://localhost:8800/login',
+					user
+				);
+				navigate('/product');
+				window.location.reload();
+
+				localStorage.setItem('logged', JSON.stringify(data.data[0]));
 			} catch (err) {
 				console.log(err);
 			}
